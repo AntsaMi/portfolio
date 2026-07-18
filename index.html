@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Antsa Andriamisaina, développeur web à ENI Fianarantsoa - Projets Vue.js, React, PHP, C#">
+    <meta name="keywords" content="développeur web, portfolio, Vue.js, React, PHP, MySQL, C#, .NET, ENI Fianarantsoa">
+    <meta name="author" content="Antsa Andriamisaina">
+    <meta property="og:title" content="Antsa Andriamisaina - Portfolio Développeur Web">
+    <meta property="og:description" content="Portfolio d'Antsa Andriamisaina, étudiant L2 informatique à l'ENI Fianarantsoa. Projets full-stack Vue.js, React, PHP, C#.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:image" content="https://antsami.github.io/images/me.jpeg">
+    <meta property="og:url" content="https://antsami.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Antsa Andriamisaina - Portfolio">
+    <meta name="twitter:description" content="Développeur web passionné, projets full-stack Vue.js, React, PHP, C#">
+    <meta name="twitter:image" content="https://antsami.github.io/images/me.jpeg">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="icon" href="images/logo-electrique-sombre.svg">
+    <link rel="apple-touch-icon" href="images/logo-electrique-sombre.svg">
+    <link rel="manifest" href="manifest.json">
+    <script>!function(){var e=localStorage.getItem("theme");e||(e=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),document.documentElement.setAttribute("data-theme",e)}()</script>
+    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
+    <title>Antsa Andriamisaina - Portfolio Développeur Web</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Antsa Andriamisaina",
+        "jobTitle": "Développeur Web",
+        "description": "Étudiant L2 Informatique à l'ENI Fianarantsoa, développeur web full-stack passionné",
+        "url": "https://antsami.github.io/",
+        "image": "https://antsami.github.io/images/me.jpeg",
+        "sameAs": [
+            "https://github.com/AntsaMi",
+            "https://www.linkedin.com/in/mirantsou03F0125",
+            "https://wa.me/261348782723"
+        ],
+        "email": "mailto:andriamisainantsa@gmail.com",
+        "knowsAbout": ["Vue.js", "React", "PHP", "MySQL", "C#", ".NET", "JavaScript", "HTML5", "CSS3", "Git"],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "ENI Fianarantsoa"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Antsa Andriamisaina - Portfolio",
+        "url": "https://antsami.github.io/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://antsami.github.io/#projects"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            <img id="logo-img" src="images/logo-electrique-sombre.svg" alt="Antsa" width="32" height="32">
+        </a>
+        <nav>
+            <a href="#home" class="active">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#skills">Compétences</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-end">
+            <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème" aria-checked="false">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            </button>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-visual">
+            <div class="blob">
+                <img src="images/me.jpeg" alt="Antsa Andriamisaina">
+            </div>
+        </div>
+        <div class="home-content">
+            <h1><span class="greeting">Bienvenue,</span><br><span class="sub">je suis</span> <span class="highlight">Antsa</span></h1>
+            <p class="typing-text"><span class="typing-static">je suis </span><span id="typed"></span></p>
+
+            <div class="social-icons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andriamisainantsa@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/261348782723" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mirantsou03F0125" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="section-title">À propos</h2>
+<p> Étudiant en L2 informatique à l'ENI Fianarantsoa, je suis passionné par la création d'outils web concrets et utilisables.
+     À travers mes projets académiques,
+    j'ai appris à traduire un besoin en solution fonctionnelle  du frontend au backend.
+     Ce qui me motive vraiment, c'est d'apprendre des technologies que je ne maîtrise pas encore 
+     et de voir jusqu'où je peux pousser une solution. Chaque projet est un défi, et c'est exactement 
+     ce qui me fait progresser.</p>      
+            <a href="documents/CV-Antsa ANDRIAMISAINA.pdf" class="cv-btn" download>Télécharger CV</a>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projets</h2>
+        <div class="projects-list">
+            <div class="project-card" data-modal="modal-1">
+                <div class="project-slideshow">
+                    <div class="slides-track">
+                        <img class="slide" src="assets/vente-voitures/1.png" alt="Vente de voitures - capture 1">
+                        <img class="slide" src="assets/vente-voitures/2.png" alt="Vente de voitures - capture 2" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/3.png" alt="Vente de voitures - capture 3" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/4.png" alt="Vente de voitures - capture 4" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/5.png" alt="Vente de voitures - capture 5" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/6.png" alt="Vente de voitures - capture 6" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/7.png" alt="Vente de voitures - capture 7" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/8.png" alt="Vente de voitures - capture 8" loading="lazy">
+                        <img class="slide" src="assets/vente-voitures/9.png" alt="Vente de voitures - capture 9" loading="lazy">
+                    </div>
+                    <div class="slide-dots"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Vente de voitures</h3>
+                    <p>Appli de gestion pour concession auto</p>
+                    <div class="tags">
+                        <span class="tag">Vue.js 3</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-type">Projet académique</span>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <button type="button" class="project-modal-trigger" data-modal="modal-1">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Voir détails</span>
+                    </button>
+                </div>
+            </div>
+            <div class="project-card" data-modal="modal-2">
+                <div class="project-slideshow">
+                    <div class="slides-track">
+                        <img class="slide" src="assets/salaire-enseignant/1.png" alt="Salaire enseignant - capture 1">
+                        <img class="slide" src="assets/salaire-enseignant/2.png" alt="Salaire enseignant - capture 2" loading="lazy">
+                        <img class="slide" src="assets/salaire-enseignant/3.png" alt="Salaire enseignant - capture 3" loading="lazy">
+                        <img class="slide" src="assets/salaire-enseignant/4.png" alt="Salaire enseignant - capture 4" loading="lazy">
+                        <img class="slide" src="assets/salaire-enseignant/5.png" alt="Salaire enseignant - capture 5" loading="lazy">
+                        <img class="slide" src="assets/salaire-enseignant/6.png" alt="Salaire enseignant - capture 6" loading="lazy">
+                        <img class="slide" src="assets/salaire-enseignant/7.png" alt="Salaire enseignant - capture 7" loading="lazy">
+                    </div>
+                    <div class="slide-dots"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Salaire enseignant</h3>
+                    <p>Outil de calcul et gestion des paies</p>
+                    <div class="tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-type">Projet académique</span>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <button type="button" class="project-modal-trigger" data-modal="modal-2">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Voir détails</span>
+                    </button>
+                </div>
+            </div>
+            <div class="project-card" data-modal="modal-3">
+                <div class="project-slideshow">
+                    <div class="slides-track">
+                        <img class="slide" src="assets/project3/1.png" alt="Abonnement Canal+ - capture 1">
+                        <img class="slide" src="assets/project3/2.png" alt="Abonnement Canal+ - capture 2" loading="lazy">
+                        <img class="slide" src="assets/project3/3.png" alt="Abonnement Canal+ - capture 3" loading="lazy">
+                        <img class="slide" src="assets/project3/4.png" alt="Abonnement Canal+ - capture 4" loading="lazy">
+                        <img class="slide" src="assets/project3/5.png" alt="Abonnement Canal+ - capture 5" loading="lazy">
+                        <img class="slide" src="assets/project3/6.png" alt="Abonnement Canal+ - capture 6" loading="lazy">
+                        <img class="slide" src="assets/project3/7.png" alt="Abonnement Canal+ - capture 7" loading="lazy">
+                        <img class="slide" src="assets/project3/8.png" alt="Abonnement Canal+ - capture 8" loading="lazy">
+                        <img class="slide" src="assets/project3/9.png" alt="Abonnement Canal+ - capture 9" loading="lazy">
+                        <img class="slide" src="assets/project3/10.png" alt="Abonnement Canal+ - capture 10" loading="lazy">
+                    </div>
+                    <div class="slide-dots"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Abonnement CanalTV</h3>
+                    <p>Conception d'un système de suivi des abonnements avec interface utilisateur intuitive</p>
+                    <div class="tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">.NET</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-type">Projet individuel</span>
+                        <span class="project-year">2026</span>
+                    </div>
+                    <button type="button" class="project-modal-trigger" data-modal="modal-3">
+                        <i class="fa-solid fa-expand"></i>
+                        <span>Voir détails</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" class="github-link"><i class="fa-brands fa-github"></i> Voir tous mes projets sur GitHub →</a>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">Compétences</h2>
+        <div class="skills-section">
+            <div class="skills-category">
+                <h4 class="skills-category-title">Langages</h4>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                    <div class="skill-card"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+                    <div class="skill-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                    <div class="skill-card"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+                    <div class="skill-card"><i class="devicon-c-plain colored"></i><span>C</span></div>
+                    <div class="skill-card"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+                    <div class="skill-card"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h4 class="skills-category-title">Développement Web</h4>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                    <div class="skill-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                    <div class="skill-card"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+                    <div class="skill-card"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
+                    <div class="skill-card"><i class="devicon-react-original colored"></i><span>React</span></div>
+                    <div class="skill-card"><i class="devicon-swift-plain colored"></i><span>SwiftUI</span></div>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h4 class="skills-category-title">Back-end &amp; Bases de données</h4>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                    <div class="skill-card"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                    <div class="skill-card"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h4 class="skills-category-title">Outils</h4>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                    <div class="skill-card"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+                    <div class="skill-card"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+                    <div class="skill-card"><i class="fa-solid fa-server"></i><span>XAMPP</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Me contacter</h2>
+        <div class="contact-content">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet du message" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit" id="formSubmit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Envoyer</span>
+                </button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+            <div class="contact-card">
+                <p class="contact-alt-label">Vous pouvez aussi m'écrire directement :</p>
+                <a href="https://wa.me/261348782723" target="_blank" rel="noopener noreferrer" class="contact-chat contact-chat-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img id="footer-logo" src="images/logo-electrique-sombre.svg" alt="Antsa" width="32" height="32">
+                <span>Antsa Andriamisaina </span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/mirantsou03F0125" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+            <div class="footer-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Madagascar</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Antsa M. Andriamisaina — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div class="modal-overlay" id="modal-1" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal1-title">Vente de voitures</h3>
+                <button type="button" class="modal-close" aria-label="Fermer la modale">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-slideshow">
+                    <div class="modal-slides-track">
+                        <img class="modal-slide" src="assets/vente-voitures/1.png" alt="Dashboard">
+                        <img class="modal-slide" src="assets/vente-voitures/2.png" alt="Gestion véhicules">
+                        <img class="modal-slide" src="assets/vente-voitures/3.png" alt="Clients">
+                        <img class="modal-slide" src="assets/vente-voitures/4.png" alt="Ventes">
+                        <img class="modal-slide" src="assets/vente-voitures/5.png" alt="Statistiques">
+                        <img class="modal-slide" src="assets/vente-voitures/6.png" alt="Paramètres">
+                        <img class="modal-slide" src="assets/vente-voitures/7.png" alt="Rapports">
+                        <img class="modal-slide" src="assets/vente-voitures/8.png" alt="Utilisateurs">
+                        <img class="modal-slide" src="assets/vente-voitures/9.png" alt="Connexion">
+                    </div>
+                    <div class="modal-dots"></div>
+                </div>
+                <div class="modal-info">
+                    <h4>Description</h4>
+                    <p>Application de gestion pour une concession automobile, avec trois entités liées :
+                         clients, véhicules et achats. Le stock de véhicules se met à jour automatiquement
+                          à chaque vente. Permet la création, le listage et la mise à jour des clients, 
+                          véhicules et achats, la recherche d'un véhicule par identifiant ou désignation,
+                           la génération d'une facture au format PDF après chaque achat, la recherche des
+                            achats sur une période donnée, ainsi que le calcul de la recette totale accumulée 
+                            sur les 6 derniers mois.</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Vue.js 3</span>
+                        <span class="modal-tag">PHP</span>
+                        <span class="modal-tag">MySQL</span>
+                    </div>
+                    <div class="modal-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2026</span>
+                        <span><i class="fa-solid fa-user-group"></i> Projet académique</span>
+                        <span><i class="fa-solid fa-code-branch"></i> Full-stack</span>
+                    </div>
+                    <div class="modal-links">
+                        <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" class="modal-link github">
+                            <i class="fa-brands fa-github"></i> Code source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-2" role="dialog" aria-modal="true" aria-labelledby="modal2-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal2-title">Salaire enseignant</h3>
+                <button type="button" class="modal-close" aria-label="Fermer la modale">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-slideshow">
+                    <div class="modal-slides-track">
+                        <img class="modal-slide" src="assets/salaire-enseignant/1.png" alt="Dashboard salaires">
+                        <img class="modal-slide" src="assets/salaire-enseignant/2.png" alt="Gestion enseignants">
+                        <img class="modal-slide" src="assets/salaire-enseignant/3.png" alt="Calcul paie">
+                        <img class="modal-slide" src="assets/salaire-enseignant/4.png" alt="Bulletins">
+                        <img class="modal-slide" src="assets/salaire-enseignant/5.png" alt="Paramètres">
+                        <img class="modal-slide" src="assets/salaire-enseignant/6.png" alt="Rapports">
+                        <img class="modal-slide" src="assets/salaire-enseignant/7.png" alt="Utilisateurs">
+                    </div>
+                    <div class="modal-dots"></div>
+                </div>
+                <div class="modal-info">
+                    <h4>Description</h4>
+                    <p>Application SPA de gestion des salaires d'enseignants, avec authentification et
+                         un système de routage à 3 menus (ajout, listage/mise à jour, bilan). Permet d
+                         'ajouter un enseignant (nombre d'heures, taux horaire) avec calcul automatiqu
+                         e du salaire, de modifier et supprimer un enregistrement depuis le tableau, e
+                         t d'afficher un bilan complet (salaire minimal, maximal et masse salariale tot
+                         ale) visualisé sous forme d'histogramme ou de camembert. Chaque opération renvoie un
+                          message de confirmation ou d'échec affiché dans l'interface.</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Vue.js</span>
+                        <span class="modal-tag">PHP</span>
+                        <span class="modal-tag">MySQL</span>
+                    </div>
+                    <div class="modal-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2026</span>
+                        <span><i class="fa-solid fa-user-group"></i> Projet académique</span>
+                        <span><i class="fa-solid fa-code-branch"></i> Full-stack</span>
+                    </div>
+                    <div class="modal-links">
+                        <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" class="modal-link github">
+                            <i class="fa-brands fa-github"></i> Code source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-3" role="dialog" aria-modal="true" aria-labelledby="modal3-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal3-title">Abonnement CanalTV</h3>
+                <button type="button" class="modal-close" aria-label="Fermer la modale">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-slideshow">
+                    <div class="modal-slides-track">
+                        <img class="modal-slide" src="assets/project3/1.png" alt="Dashboard abonnements">
+                        <img class="modal-slide" src="assets/project3/2.png" alt="Gestion clients">
+                        <img class="modal-slide" src="assets/project3/3.png" alt="Plans abonnement">
+                        <img class="modal-slide" src="assets/project3/4.png" alt="Paiements">
+                        <img class="modal-slide" src="assets/project3/5.png" alt="Notifications">
+                        <img class="modal-slide" src="assets/project3/6.png" alt="Rapports">
+                        <img class="modal-slide" src="assets/project3/7.png" alt="Paramètres">
+                        <img class="modal-slide" src="assets/project3/8.png" alt="Utilisateurs">
+                        <img class="modal-slide" src="assets/project3/9.png" alt="Connexion">
+                        <img class="modal-slide" src="assets/project3/10.png" alt="Profil">
+                    </div>
+                    <div class="modal-dots"></div>
+                </div>
+                <div class="modal-info">
+                    <h4>Description</h4>
+                    <p>Application de bureau en C#/WPF pour la gestion des abonnements CanalTV. 
+                        Permet la gestion complète (ajout, modification, suppression) des clients et des chaînes, 
+                        avec plusieurs formules d'abonnement disponibles et le suivi des paiements récurrents des 
+                        abonnés.</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">C#</span>
+                        <span class="modal-tag">.NET</span>
+                        <span class="modal-tag">WPF</span>
+                    </div>
+                    <div class="modal-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2026</span>
+                        <span><i class="fa-solid fa-user"></i> Projet individuel</span>
+                        <span><i class="fa-solid fa-code-branch"></i> Desktop</span>
+                    </div>
+                    <div class="modal-links">
+                        <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" class="modal-link github">
+                            <i class="fa-brands fa-github"></i> Code source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--div class="modal-overlay" id="modal-4" role="dialog" aria-modal="true" aria-labelledby="modal4-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal4-title">Gestion d'hôtel</h3>
+                <button type="button" class="modal-close" aria-label="Fermer la modale">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-slideshow">
+                    <div class="modal-slides-track" style="display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);color:var(--text-subtle);font-size:1.4rem;">
+                        <span>Aucune capture disponible<i class="fa-solid fa-hourglass-half" style="margin-left:0.5rem;"></i></span>
+                    </div>
+                    <div class="modal-dots"></div>
+                </div>
+                <div class="modal-info">
+                    <h4>Description</h4>
+                    <p>Application de gestion hôtelière en cours de développement. 
+                        Gestion des réservations de chambres, check-in/check-out, facturation, gestion des clients, disponibilité en temps réel, reporting d'occupation et revenus.</p>
+                    <div class="modal-tags">
+                        <span class="modal-tag">React.js</span>
+                        <span class="modal-tag">PostgreSQL</span>
+                        <span class="modal-tag">Node.js / Express</span>
+                        <span class="modal-tag">TypeScript</span>
+                        <span class="modal-tag">Tailwind CSS</span>
+                    </div>
+                    <div class="modal-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2026</span>
+                        <span><i class="fa-solid fa-user-group"></i> Projet en cours</span>
+                        <span><i class="fa-solid fa-code-branch"></i> Full-stack</span>
+                    </div>
+                    <div class="modal-links">
+                        <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" class="modal-link github">
+                            <i class="fa-brands fa-github"></i> Code source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div-->
+
+    <script>
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function safeInit(name, fn) {
+            try {
+                fn();
+            } catch (err) {
+                console.error(`[Erreur - ${name}]`, err);
+            }
+        }
+
+        safeInit('theme', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const logoImg = document.getElementById('logo-img');
+            const footerLogo = document.getElementById('footer-logo');
+            const html = document.documentElement;
+            const darkLogo = 'images/logo-electrique-sombre.svg';
+            const lightLogo = 'images/logo-electrique-clair.svg';
+
+            function applyTheme(theme) {
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                const isLight = theme === 'light';
+                themeToggle.setAttribute('aria-checked', isLight);
+                logoImg.src = isLight ? lightLogo : darkLogo;
+                footerLogo.src = isLight ? lightLogo : darkLogo;
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const current = html.getAttribute('data-theme');
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+            });
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    applyTheme(e.matches ? 'dark' : 'light');
+                }
+            });
+        });
+
+        safeInit('typing-effect', () => {
+            const typedEl = document.getElementById('typed');
+            const words = ['un développeur web', 'créatif'];
+            let wordIdx = 0, charIdx = 0, isDeleting = false, typeTimeout;
+
+            function typeEffect() {
+                const current = words[wordIdx];
+                if (isDeleting) {
+                    charIdx--;
+                    typedEl.textContent = current.substring(0, charIdx);
+                } else {
+                    charIdx++;
+                    typedEl.textContent = current.substring(0, charIdx);
+                }
+                if (!isDeleting && charIdx === current.length) {
+                    typeTimeout = setTimeout(() => { isDeleting = true; typeEffect(); }, 2000);
+                    return;
+                }
+                if (isDeleting && charIdx === 0) {
+                    isDeleting = false;
+                    wordIdx = (wordIdx + 1) % words.length;
+                    typeTimeout = setTimeout(typeEffect, 400);
+                    return;
+                }
+                typeTimeout = setTimeout(typeEffect, isDeleting ? 25 : 50);
+            }
+            typeEffect();
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) clearTimeout(typeTimeout);
+                else typeEffect();
+            });
+        });
+
+        safeInit('greeting', () => {
+            const hour = new Date().getHours();
+            const greetingEl = document.querySelector('.greeting');
+            if (hour < 12) greetingEl.textContent = 'Bonjour,';
+            else if (hour < 18) greetingEl.textContent = 'Bon après-midi,';
+            else greetingEl.textContent = 'Bonsoir,';
+        });
+
+        safeInit('nav-scroll', () => {
+            const header = document.querySelector('header');
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(s => {
+                    if (window.scrollY >= s.offsetTop - 200) current = s.id;
+                });
+                navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+            }
+
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('header-scrolled', window.scrollY > 80);
+                updateActiveNav();
+            });
+            updateActiveNav();
+        });
+
+        safeInit('mobile-menu', () => {
+            window.toggleMenu = function () {
+                document.querySelector('nav').classList.toggle('active');
+            };
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.querySelector('nav').classList.remove('active');
+                });
+            });
+        });
+
+        safeInit('project-carousels', () => {
+            document.querySelectorAll('.project-card').forEach(card => {
+                const track = card.querySelector('.slides-track');
+                const slides = track.querySelectorAll('.slide');
+                const dotsContainer = card.querySelector('.slide-dots');
+                const total = slides.length;
+                if (total < 2) return;
+                let idx = 0;
+
+                slides.forEach((_, i) => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.setAttribute('aria-label', `Diapositive ${i + 1}`);
+                    btn.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(btn);
+                });
+                dotsContainer.children[0].classList.add('active');
+
+                function goTo(i) {
+                    idx = i;
+                    track.style.transform = `translateX(-${idx * 100}%)`;
+                    dotsContainer.querySelectorAll('button').forEach((d, j) => {
+                        d.classList.toggle('active', j === idx);
+                    });
+                }
+
+                if (!reducedMotion) {
+                    setInterval(() => { goTo((idx + 1) % total); }, 4000);
+                }
+            });
+        });
+
+        safeInit('modal-carousels', () => {
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                const track = modal.querySelector('.modal-slides-track');
+                const slides = track?.querySelectorAll('.modal-slide');
+                const dotsContainer = modal.querySelector('.modal-dots');
+                const total = slides?.length || 0;
+                if (total < 2) return;
+                let idx = 0;
+
+                slides.forEach((_, i) => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.setAttribute('aria-label', `Diapositive ${i + 1}`);
+                    btn.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(btn);
+                });
+                dotsContainer.children[0].classList.add('active');
+
+                function goTo(i) {
+                    idx = i;
+                    track.style.transform = `translateX(-${idx * 100}%)`;
+                    dotsContainer.querySelectorAll('button').forEach((d, j) => {
+                        d.classList.toggle('active', j === idx);
+                    });
+                }
+
+                if (!reducedMotion) {
+                    setInterval(() => { goTo((idx + 1) % total); }, 4000);
+                }
+            });
+        });
+
+        safeInit('modal-open-close', () => {
+            const modalTriggers = document.querySelectorAll('.project-modal-trigger');
+            const modalOverlays = document.querySelectorAll('.modal-overlay');
+            const modalCloses = document.querySelectorAll('.modal-close');
+            let lastFocusedElement = null;
+
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (!modal) return;
+                lastFocusedElement = document.activeElement;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                modal.querySelector('.modal-close').focus();
+            }
+
+            function closeModal(modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                if (lastFocusedElement) lastFocusedElement.focus();
+            }
+
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => { openModal(trigger.dataset.modal); });
+            });
+            modalCloses.forEach(btn => {
+                btn.addEventListener('click', () => { closeModal(btn.closest('.modal-overlay')); });
+            });
+            modalOverlays.forEach(overlay => {
+                overlay.addEventListener('click', e => {
+                    if (e.target === overlay) closeModal(overlay);
+                });
+            });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') {
+                    const activeModal = document.querySelector('.modal-overlay.active');
+                    if (activeModal) closeModal(activeModal);
+                }
+            });
+        });
+
+        safeInit('scroll-reveal', () => {
+            if (reducedMotion) return;
+            const revealEls = document.querySelectorAll('.about, .projects, .skills, .contact');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealEls.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(40px)';
+                el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(el);
+            });
+        });
+
+        safeInit('home-parallax', () => {
+            if (reducedMotion) return;
+            const homeSection = document.querySelector('.home');
+            const homeVisual = document.querySelector('.home-visual');
+            homeSection.addEventListener('mousemove', (e) => {
+                const rect = homeSection.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                homeVisual.style.transform = `translate(${x * 16}px, ${y * 16}px)`;
+                homeVisual.style.transition = 'transform 0.1s ease-out';
+            });
+            homeSection.addEventListener('mouseleave', () => {
+                homeVisual.style.transform = 'translate(0, 0)';
+                homeVisual.style.transition = 'transform 0.5s ease-out';
+            });
+        });
+
+        safeInit('contact-form', () => {
+            const contactForm = document.getElementById('contactForm');
+            const formSubmit = document.getElementById('formSubmit');
+            const formStatus = document.getElementById('formStatus');
+            if (!contactForm) return;
+
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const originalText = formSubmit.innerHTML;
+                formSubmit.disabled = true;
+                formSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Envoi...</span>';
+                formStatus.className = 'form-status';
+                formStatus.textContent = '';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(window.location.href, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        formStatus.className = 'form-status success';
+                        formStatus.textContent = 'Message envoyé avec succès ! Je vous répondrai au plus vite.';
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Erreur serveur');
+                    }
+                } catch (err) {
+                    formStatus.className = 'form-status error';
+                    formStatus.textContent = 'Erreur lors de l\'envoi. Essayez via Gmail ou WhatsApp.';
+                    console.error(err);
+                } finally {
+                    formSubmit.disabled = false;
+                    formSubmit.innerHTML = originalText;
+                }
+            });
+        });
+
+        safeInit('skill-glow', () => {
+            document.querySelectorAll('.skill-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+                    card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
