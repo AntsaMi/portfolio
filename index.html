@@ -277,8 +277,7 @@
     <section class="contact" id="contact">
         <h2 class="section-title">Me contacter</h2>
         <div class="contact-content">
-            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact">
+            <form action="https://formspree.io/f/xpqvdred" method="POST" id="contactForm" class="contact-form">
                 <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" id="name" name="name" placeholder="Votre nom" required>
@@ -777,43 +776,30 @@
         });
 
         safeInit('contact-form', () => {
-            const contactForm = document.getElementById('contactForm');
-            const formSubmit = document.getElementById('formSubmit');
-            const formStatus = document.getElementById('formStatus');
-            if (!contactForm) return;
-
-            contactForm.addEventListener('submit', async (e) => {
+            const form = document.getElementById('contactForm');
+            const status = document.getElementById('formStatus');
+            const btn = document.getElementById('formSubmit');
+            if (!form) return;
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const originalText = formSubmit.innerHTML;
-                formSubmit.disabled = true;
-                formSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Envoi...</span>';
-                formStatus.className = 'form-status';
-                formStatus.textContent = '';
-
-                try {
-                    const formData = new FormData(contactForm);
-                    const response = await fetch('/', {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/x-www-form-urlencoded' 
-                        },
-                        body: new URLSearchParams(formData).toString()
-                    });
-                    if (response.ok) {
-                        formStatus.className = 'form-status success';
-                        formStatus.textContent = 'Message envoyé avec succès ! Je vous répondrai au plus vite.';
-                        contactForm.reset();
-                    } else {
-                        throw new Error('Erreur serveur');
-                    }
-                } catch (err) {
-                    formStatus.className = 'form-status error';
-                    formStatus.textContent = 'Erreur lors de l\'envoi. Essayez via Gmail ou WhatsApp.';
-                    console.error(err);
-                } finally {
-                    formSubmit.disabled = false;
-                    formSubmit.innerHTML = originalText;
+                const original = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Envoi...</span>';
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    status.className = 'form-status success';
+                    status.textContent = 'Message envoyé avec succès ! ✅';
+                    form.reset();
+                } else {
+                    status.className = 'form-status error';
+                    status.textContent = 'Erreur. Essayez via WhatsApp.';
                 }
+                btn.disabled = false;
+                btn.innerHTML = original;
             });
         });
 
