@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" data-theme="dark" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,7 +100,7 @@
         </div>
         <div class="home-content">
             <h1><span class="greeting">Bienvenue,</span><br><span class="sub">je suis</span> <span class="highlight">Antsa</span></h1>
-            <p class="typing-text"><span class="typing-static">je suis </span><span id="typed"></span></p>
+            <p class="typing-text"><span class="typing-static">je suis </span><span id="typed" translate="no"></span></p>
 
             <div class="social-icons">
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andriamisainantsa@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -792,10 +792,14 @@
 
                 try {
                     const formData = new FormData(contactForm);
-                    const response = await fetch(window.location.href, {
+                    const params = new URLSearchParams();
+                    for (const [key, value] of formData.entries()) {
+                        params.append(key, value);
+                    }
+                    const response = await fetch('/', {
                         method: 'POST',
-                        body: formData,
-                        headers: { 'Accept': 'application/json' }
+                        body: params,
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' }
                     });
                     if (response.ok) {
                         formStatus.className = 'form-status success';
