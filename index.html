@@ -70,6 +70,14 @@
     </script>
 </head>
 <body>
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="images/logo-electrique-sombre.svg" alt="Antsa" class="splash-logo">
+            <div class="splash-loader" aria-hidden="true">
+                <div class="splash-dot"></div>
+            </div>
+        </div>
+    </div>
     <header>
         <a href="#" class="logo">
             <img id="logo-img" src="images/logo-electrique-sombre.svg" alt="Antsa" width="32" height="32">
@@ -525,6 +533,13 @@
 
     <script>
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        !function () {
+            const splash = document.getElementById('splash-screen');
+            const hide = () => splash.classList.add('hidden');
+            if (document.readyState === 'complete') setTimeout(hide, 2200);
+            else window.addEventListener('load', () => setTimeout(hide, 2200));
+        }();
 
         function safeInit(name, fn) {
             try {
