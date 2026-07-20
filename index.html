@@ -26,6 +26,7 @@
     <link rel="apple-touch-icon" href="images/logo-electrique-sombre.svg">
     <link rel="manifest" href="manifest.json">
     <script>!function(){var e=localStorage.getItem("theme");e||(e="dark"),document.documentElement.setAttribute("data-theme",e)}()</script>
+    <script>!function(){if(!window.navigator.standalone&&!window.matchMedia("(display-mode: standalone)").matches){var e=document.createElement("style");e.textContent="#splash-screen{display:none!important}";document.head.appendChild(e)}}()</script>
     <link rel="stylesheet" href="style.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
@@ -103,7 +104,7 @@
     <section class="home" id="home">
         <div class="home-visual">
             <div class="blob">
-                <img src="images/me.jpeg" alt="Antsa Andriamisaina">
+                <img src="images/Antsa.png" alt="Antsa Andriamisaina">
             </div>
         </div>
         <div class="home-content">
@@ -345,7 +346,7 @@
         </div>
     </footer>
 
-    <!-- Project Modals -->
+
     <div class="modal-overlay" id="modal-1" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
         <div class="modal">
             <div class="modal-header">
@@ -492,53 +493,20 @@
         </div>
     </div>
 
-    <!--div class="modal-overlay" id="modal-4" role="dialog" aria-modal="true" aria-labelledby="modal4-title">
-        <div class="modal">
-            <div class="modal-header">
-                <h3 id="modal4-title">Gestion d'hôtel</h3>
-                <button type="button" class="modal-close" aria-label="Fermer la modale">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-slideshow">
-                    <div class="modal-slides-track" style="display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);color:var(--text-subtle);font-size:1.4rem;">
-                        <span>Aucune capture disponible<i class="fa-solid fa-hourglass-half" style="margin-left:0.5rem;"></i></span>
-                    </div>
-                    <div class="modal-dots"></div>
-                </div>
-                <div class="modal-info">
-                    <h4>Description</h4>
-                    <p>Application de gestion hôtelière en cours de développement. 
-                        Gestion des réservations de chambres, check-in/check-out, facturation, gestion des clients, disponibilité en temps réel, reporting d'occupation et revenus.</p>
-                    <div class="modal-tags">
-                        <span class="modal-tag">React.js</span>
-                        <span class="modal-tag">PostgreSQL</span>
-                        <span class="modal-tag">Node.js / Express</span>
-                        <span class="modal-tag">TypeScript</span>
-                        <span class="modal-tag">Tailwind CSS</span>
-                    </div>
-                    <div class="modal-meta">
-                        <span><i class="fa-solid fa-calendar"></i> 2026</span>
-                        <span><i class="fa-solid fa-user-group"></i> Projet en cours</span>
-                        <span><i class="fa-solid fa-code-branch"></i> Full-stack</span>
-                    </div>
-                    <div class="modal-links">
-                        <a href="https://github.com/AntsaMi" target="_blank" rel="noopener noreferrer" class="modal-link github">
-                            <i class="fa-brands fa-github"></i> Code source
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div-->
+
 
     <script>
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         !function () {
             const splash = document.getElementById('splash-screen');
-            const hide = () => splash.classList.add('hidden');
-            if (document.readyState === 'complete') setTimeout(hide, 2200);
-            else window.addEventListener('load', () => setTimeout(hide, 2200));
+            if (!splash) return;
+            const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone) {
+                const hide = () => splash.classList.add('hidden');
+                if (document.readyState === 'complete') setTimeout(hide, 2200);
+                else window.addEventListener('load', () => setTimeout(hide, 2200));
+            }
         }();
 
         function safeInit(name, fn) {
