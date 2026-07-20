@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://antsami.github.io/sitemap.xml
+Sitemap: https://antsa.netlify.app/sitemap.xml
